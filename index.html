@@ -1,12 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyHub</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <p1>Hello World!</p1>
-    
+
+  <header>
+    <h1>📚 StudyHub</h1>
+    <p>Organize sua vida acadêmica.</p>
+  </header>
+
+  <nav>
+    <button class="menu-btn" data-section="dashboard">Dashboard</button>
+    <button class="menu-btn" data-section="disciplinas">Disciplinas</button>
+    <button class="menu-btn" data-section="tarefas">Tarefas</button>
+    <button class="menu-btn" data-section="provas">Provas</button>
+    <button class="menu-btn" data-section="metas">Metas</button>
+  </nav>
+
+  <main>
+
+    <section id="dashboard" class="content active">
+      <h2>Dashboard</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3 id="total-disciplinas">0</h3>
+          <p>Disciplinas</p>
+        </div>
+
+        <div class="card">
+          <h3 id="total-tarefas">0</h3>
+          <p>Tarefas</p>
+        </div>
+
+        <div class="card">
+          <h3 id="total-provas">0</h3>
+          <p>Provas</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="disciplinas" class="content">
+      <h2>Disciplinas</h2>
+
+      <form id="form-disciplina">
+        <input
+          type="text"
+          id="nome-disciplina"
+          placeholder="Nome da disciplina"
+          required
+        >
+
+        <button type="submit">
+          Adicionar
+        </button>
+      </form>
+
+      <ul id="lista-disciplinas"></ul>
+    </section>
+
+    <section id="tarefas" class="content">
+      <h2>Tarefas</h2>
+      <p>Em desenvolvimento...</p>
+    </section>
+
+    <section id="provas" class="content">
+      <h2>Agenda de Provas</h2>
+      <p>Em desenvolvimento...</p>
+    </section>
+
+    <section id="metas" class="content">
+      <h2>Metas de Estudo</h2>
+      <p>Em desenvolvimento...</p>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
