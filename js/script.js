@@ -21,8 +21,17 @@ const formDisciplina =
 const listaDisciplinas =
   document.getElementById('lista-disciplinas');
 
+const formAnotacao =
+  document.getElementById('form-anotacao');
+
+const listaAnotacoes =
+  document.getElementById('lista-anotacoes');
+
 let disciplinas =
   JSON.parse(localStorage.getItem('disciplinas')) || [];
+
+let anotacoes =
+  JSON.parse(localStorage.getItem('anotacoes')) || [];
 
 function atualizarLista() {
   listaDisciplinas.innerHTML = '';
@@ -50,6 +59,44 @@ function atualizarLista() {
   );
 }
 
+function atualizarAnotacoes() {
+  listaAnotacoes.innerHTML = '';
+
+  anotacoes.forEach((anotacao, indice) => {
+
+    const card =
+      document.createElement('div');
+
+    card.classList.add('anotacao-card');
+
+    card.innerHTML = `
+      <h3>${anotacao.titulo}</h3>
+
+      <p>
+        <strong>Disciplina:</strong>
+        ${anotacao.disciplina}
+      </p>
+
+      <p>${anotacao.conteudo}</p>
+
+      <button onclick="removerAnotacao(${indice})">
+        Excluir
+      </button>
+    `;
+
+    listaAnotacoes.appendChild(card);
+  });
+
+  document.getElementById(
+    'total-anotacoes'
+  ).textContent = anotacoes.length;
+
+  localStorage.setItem(
+    'anotacoes',
+    JSON.stringify(anotacoes)
+  );
+}
+
 formDisciplina.addEventListener('submit', e => {
   e.preventDefault();
 
@@ -63,9 +110,47 @@ formDisciplina.addEventListener('submit', e => {
   atualizarLista();
 });
 
+formAnotacao.addEventListener(
+  'submit',
+  function (e) {
+    e.preventDefault();
+
+    const titulo =
+      document.getElementById(
+        'titulo-anotacao'
+      ).value;
+
+    const disciplina =
+      document.getElementById(
+        'disciplina-anotacao'
+      ).value;
+
+    const conteudo =
+      document.getElementById(
+        'conteudo-anotacao'
+      ).value;
+
+    anotacoes.push({
+      titulo,
+      disciplina,
+      conteudo
+    });
+
+    formAnotacao.reset();
+
+    atualizarAnotacoes();
+  }
+);
+
 function removerDisciplina(indice) {
   disciplinas.splice(indice, 1);
   atualizarLista();
 }
 
+function removerAnotacao(indice) {
+  anotacoes.splice(indice, 1);
+  atualizarAnotacoes();
+}
+
 atualizarLista();
+atualizarAnotacoes();
