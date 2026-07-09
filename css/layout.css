@@ -1,0 +1,230 @@
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    background:white;
+
+    border-right:1px solid var(--border);
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:var(--shadow);
+
+    z-index:100;
+
+}
+
+.logo{
+
+    padding:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.logo i{
+
+    font-size:34px;
+
+    color:var(--primary);
+
+}
+
+.logo h2{
+
+    font-size:26px;
+
+    color:var(--primary);
+
+}
+
+/* =======================
+   MENU
+======================= */
+
+.sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-top:25px;
+
+}
+
+.nav-item{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    text-align:left;
+
+    padding:18px 30px;
+
+    transition:.3s;
+
+    color:#555;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.nav-item i{
+
+    width:22px;
+
+    font-size:18px;
+
+}
+
+.nav-item:hover{
+
+    background:#EFF6FF;
+
+    color:var(--primary);
+
+}
+
+.nav-item.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.nav-item.active i{
+
+    color:white;
+
+}
+
+main{
+
+    margin-left:270px;
+
+    width:100%;
+
+    padding:40px;
+
+}
+
+/* =======================
+   PÁGINAS
+======================= */
+
+.page{
+
+    display:none;
+
+}
+
+.page.active{
+
+    display:block;
+
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.page-header{
+
+    margin-bottom:35px;
+
+}
+
+.page-header h1{
+
+    font-size:34px;
+
+    color:#1F2937;
+
+}
+
+.page-header p{
+
+    margin-top:8px;
+
+    color:#6B7280;
+
+}
+
+.footer{
+
+    margin-top:40px;
+
+    padding:25px;
+
+    text-align:center;
+
+    background:#ffffff;
+
+    border-top:1px solid #e5e7eb;
+
+    color:#6b7280;
+
+    font-size:15px;
+
+}
+
+.footer strong{
+
+    color:#2563eb;
+
+    font-size:18px;
+
+}
+/* ===========================
+   BOAS-VINDAS
+=========================== */
+
+.welcome-box{
+
+    margin-bottom:25px;
+
+}
+
+.welcome-box h3{
+
+    color:#2563eb;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.welcome-box p{
+
+    color:#6b7280;
+
+    font-size:18px;
+
+}

@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#F5F7FB;
+
+    color:#2C3E50;
+
+    min-height:100vh;
+
+    display:flex;
+
+}
+
+:root{
+
+    --primary:#2563EB;
+    --primary-dark:#1D4ED8;
+
+    --green:#10B981;
+    --yellow:#F59E0B;
+    --red:#EF4444;
+
+    --background:#F5F7FB;
+
+    --card:#FFFFFF;
+
+    --border:#E5E7EB;
+
+    --text:#374151;
+
+    --shadow:
+
+        0 10px 25px rgba(0,0,0,.08);
+
+}
+
+a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    text-decoration:underline;
+
+}
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+::placeholder{
+
+    color:#9CA3AF;
+
+}
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ECEFF3;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#B8C1CC;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#8B95A1;
+
+}

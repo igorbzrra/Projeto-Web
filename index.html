@@ -1,96 +1,438 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyHub</title>
+
+  <title>StudyHub - Organizador de Estudos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <header>
-    <h1>StudyHub</h1>
-    <p>Organize sua vida acadêmica.</p>
-  </header>
+  <aside class="sidebar">
 
-  <nav>
-    <button class="menu-btn" data-section="dashboard">Dashboard</button>
-    <button class="menu-btn" data-section="disciplinas">Disciplinas</button>
-    <button class="menu-btn" data-section="tarefas">Tarefas</button>
-    <button class="menu-btn" data-section="provas">Provas</button>
-    <button class="menu-btn" data-section="metas">Metas</button>
-    <button class="menu-btn" data-section="anotacoes">Anotações</button>
-  </nav>
+    <div class="logo">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h2>StudyHub</h2>
+    </div>
+
+    <nav>
+
+      <button class="nav-item active" data-page="dashboard">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+      </button>
+
+      <button class="nav-item" data-page="disciplinas">
+        <i class="fa-solid fa-book"></i>
+        Disciplinas
+      </button>
+
+      <button class="nav-item" data-page="tarefas">
+        <i class="fa-solid fa-list-check"></i>
+        Tarefas
+      </button>
+
+      <button class="nav-item" data-page="provas">
+        <i class="fa-solid fa-calendar-days"></i>
+        Provas
+      </button>
+
+      <button class="nav-item" data-page="anotacoes">
+        <i class="fa-solid fa-note-sticky"></i>
+        Anotações
+      </button>
+
+      <button class="nav-item" data-page="metas">
+        <i class="fa-solid fa-bullseye"></i>
+        Metas
+      </button>
+
+    </nav>
+
+  </aside>
 
   <main>
 
-    <section id="dashboard" class="content active">
-      <h2>Dashboard</h2>
+    <!-- DASHBOARD -->
+
+    <section id="dashboard" class="page active">
+
+      <header class="page-header">
+        <h1>Dashboard</h1>
+        <div class="welcome-box">
+
+          <h3 id="mensagem-boas-vindas"></h3>
+
+          <p id="data-atual"></p>
+
+        </div>
+      </header>
 
       <div class="cards">
+
         <div class="card">
-          <h3 id="total-disciplinas">0</h3>
-          <p>Disciplinas</p>
+          <i class="fa-solid fa-book"></i>
+          <h2 id="total-disciplinas">0</h2>
+          <span>Disciplinas</span>
         </div>
 
         <div class="card">
-          <h3 id="total-tarefas">0</h3>
-          <p>Tarefas</p>
+          <i class="fa-solid fa-list-check"></i>
+          <h2 id="total-tarefas">0</h2>
+          <span>Tarefas</span>
         </div>
 
         <div class="card">
-          <h3 id="total-provas">0</h3>
-          <p>Provas</p>
+          <i class="fa-solid fa-calendar-days"></i>
+          <h2 id="total-provas">0</h2>
+          <span>Provas</span>
         </div>
 
         <div class="card">
-            <h3 id="total-anotacoes">0</h3>
-            <p>Anotações</p>
+          <i class="fa-solid fa-note-sticky"></i>
+          <h2 id="total-anotacoes">0</h2>
+          <span>Anotações</span>
         </div>
+
       </div>
+
+      <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+          <h3>Próximos Compromissos</h3>
+
+          <div id="proximos-compromissos">
+
+            <p>Nenhum compromisso cadastrado.</p>
+
+          </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+          <h3>Avisos</h3>
+
+          <div id="avisos">
+
+            <p>Nenhum aviso disponível.</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
-    <section id="disciplinas" class="content">
-      <h2>Disciplinas</h2>
+    <!-- DISCIPLINAS -->
 
-      <form id="form-disciplina">
-        <input
-          type="text"
-          id="nome-disciplina"
-          placeholder="Nome da disciplina"
-          required
-        >
+    <section id="disciplinas" class="page">
+
+      <header class="page-header">
+
+        <h1>Disciplinas</h1>
+
+      </header>
+
+      <form id="form-disciplina" class="form">
+
+        <input type="text" id="nome-disciplina" placeholder="Nome da disciplina" required>
+
+        <input type="text" id="professor" placeholder="Professor" required>
+
+        <input type="text" id="curso" placeholder="Curso">
+
+        <input type="text" id="semestre" placeholder="Semestre">
+
+        <input type="text" id="sala" placeholder="Sala">
+
+        <input type="text" id="horario" placeholder="Horário">
+
+        <label for="cor-disciplina">
+          Cor da disciplina
+        </label>
+
+        <input type="color" id="cor-disciplina" value="#2563EB">
 
         <button type="submit">
-          Adicionar
+
+          <i class="fa-solid fa-plus"></i>
+
+          Salvar Disciplina
+
         </button>
+
       </form>
 
-      <ul id="lista-disciplinas"></ul>
+      <div class="search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text" id="pesquisa-disciplina" placeholder="Pesquisar disciplina...">
+
+      </div>
+
+      <div id="lista-disciplinas" class="grid">
+      </div>
+
     </section>
 
-    <section id="tarefas" class="content">
-      <h2>Tarefas</h2>
-      <p>Em desenvolvimento...</p>
+    <!-- TAREFAS -->
+
+    <section id="tarefas" class="page">
+
+      <header class="page-header">
+
+        <h1>Tarefas</h1>
+
+      </header>
+
+      <form id="form-tarefa" class="form">
+
+        <input type="text" id="titulo-tarefa" placeholder="Título" required>
+
+        <select id="disciplina-tarefa">
+        </select>
+
+        <textarea id="descricao-tarefa" placeholder="Descrição">
+                </textarea>
+
+        <select id="prioridade">
+
+          <option>Alta</option>
+
+          <option>Média</option>
+
+          <option>Baixa</option>
+
+        </select>
+
+        <input type="date" id="data-entrega">
+
+        <button type="submit">
+
+          Salvar Tarefa
+
+        </button>
+
+      </form>
+
+      <div class="search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input id="pesquisa-tarefa" placeholder="Pesquisar tarefa...">
+
+      </div>
+
+      <div id="lista-tarefas" class="grid">
+      </div>
+
     </section>
 
-    <section id="provas" class="content">
-      <h2>Agenda de Provas</h2>
-      <p>Em desenvolvimento...</p>
+    <!-- PROVAS -->
+
+    <section id="provas" class="page">
+
+      <header class="page-header">
+
+        <h1>Provas</h1>
+
+      </header>
+
+      <form id="form-prova" class="form">
+
+        <input type="text" id="titulo-prova" placeholder="Título da prova" required>
+
+        <select id="disciplina-prova" required>
+
+          <option value="">
+            Selecione uma disciplina
+          </option>
+
+        </select>
+
+        <select id="tipo-prova">
+
+          <option value="Prova">Prova</option>
+          <option value="Seminário">Seminário</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Apresentação">Apresentação</option>
+
+        </select>
+
+        <input type="date" id="data-prova" required>
+
+        <input type="time" id="hora-prova">
+
+        <input type="text" id="local-prova" placeholder="Local">
+
+        <textarea id="observacao-prova" placeholder="Observações">
+    </textarea>
+
+        <button type="submit">
+
+          Salvar Prova
+
+        </button>
+
+      </form>
+
+      <div class="search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input id="pesquisa-prova" placeholder="Pesquisar prova...">
+
+      </div>
+
+      <div id="lista-provas" class="grid">
+      </div>
+
     </section>
 
-    <section id="metas" class="content">
-      <h2>Metas de Estudo</h2>
-      <p>Em desenvolvimento...</p>
+    <!-- ANOTAÇÕES -->
+
+    <section id="anotacoes" class="page">
+
+      <header class="page-header">
+
+        <h1>Anotações</h1>
+
+      </header>
+
+      <form id="form-anotacao" class="form">
+
+        <input type="text" id="titulo-anotacao" placeholder="Título da anotação" required>
+
+        <select id="disciplina-anotacao" required>
+
+          <option value="">
+            Selecione uma disciplina
+          </option>
+
+        </select>
+
+        <select id="categoria-anotacao">
+
+          <option value="Resumo">Resumo</option>
+
+          <option value="Código">Código</option>
+
+          <option value="Exercício">Exercício</option>
+
+          <option value="Importante">Importante</option>
+
+          <option value="Outro">Outro</option>
+
+        </select>
+
+        <textarea id="conteudo-anotacao" placeholder="Escreva sua anotação..." required>
+    </textarea>
+
+        <button type="submit">
+
+          Salvar Anotação
+
+        </button>
+
+      </form>
+
+      <div class="search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text" id="pesquisa-anotacao" placeholder="Pesquisar anotação...">
+
+      </div>
+
+      <div id="lista-anotacoes" class="grid">
+      </div>
+
     </section>
 
-    <section id="anotacoes" class="content">
-      <h2>Anotações</h2>
-      <p>Em desenvolvimento...</p>
+    <!-- METAS -->
+
+    <section id="metas" class="page">
+
+      <header class="page-header">
+
+        <h1>Metas</h1>
+
+      </header>
+
+      <form id="form-meta" class="form">
+
+        <input type="text" id="titulo-meta" placeholder="Título da meta" required>
+
+        <textarea id="descricao-meta" placeholder="Descrição da meta" rows="4">
+        </textarea>
+
+        <input type="date" id="prazo-meta" required>
+
+        <button type="submit">
+
+          <i class="fa-solid fa-bullseye"></i>
+
+          Salvar Meta
+
+        </button>
+
+      </form>
+
+      <div class="search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text" id="pesquisa-meta" placeholder="Pesquisar meta...">
+
+      </div>
+
+      <div id="lista-metas" class="grid">
+      </div>
+
     </section>
 
   </main>
 
-  <script src="js/script.js"></script>
+  <footer class="footer">
+
+    <p>
+      <strong>StudyHub</strong>
+    </p>
+
+    <p>
+      Desenvolvido por José Igor de Andrade Bezerra e Vitorio Souza Barros
+    </p>
+
+    <p>
+      Ciência da Computação • IFBA • 2026
+    </p>
+
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/disciplinas.js"></script>
+  <script src="js/tarefas.js"></script>
+  <script src="js/provas.js"></script>
+  <script src="js/anotacoes.js"></script>
+  <script src="js/metas.js"></script>
+  <script src="js/app.js"></script>
+
 </body>
+
 </html>

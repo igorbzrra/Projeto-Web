@@ -68,17 +68,29 @@ O projeto foi idealizado para oferecer uma solução simples e acessível que ce
 
 ```text
 studyhub/
-│
-├── index.html
+
+│ index.html
+│ README.md
+
 ├── css/
-│   └── style.css
-│
+│   │   ├── animation.css
+│   │   ├── base.css
+│   │   ├── cards.css
+│   │   ├── components.css
+│   │   ├── dashboard.css
+│   │   ├── forms.css
+│   │   ├── layout.css
+│   │   ├── responsive.css
+│   │   └── style.css
+|
 ├── js/
-│   └── script.js
-│
-├── assets/
-│   ├── images/
-│   └── icons/
-│
-└── README.md
+│   │   ├── app.js
+│   │   ├── storage.js
+│   │   ├── dashboard.js
+│   │   ├── disciplinas.js
+│   │   ├── tarefas.js
+│   │   ├── provas.js
+│   │   ├── anotacoes.js
+│   │   ├── metas.js
+│   │   └── utils.js
 ```
