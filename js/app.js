@@ -1,8 +1,3 @@
-// ==========================================
-// STUDYHUB 2.0
-// app.js
-// ==========================================
-
 document.addEventListener("DOMContentLoaded", () => {
 
     iniciarMenu();
@@ -22,10 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizarDashboard();
 
 });
-
-// ==========================================
-// MENU LATERAL
-// ==========================================
 
 function iniciarMenu() {
 
@@ -64,10 +55,6 @@ function iniciarMenu() {
     });
 
 }
-
-// ==========================================
-// CARREGAMENTO
-// ==========================================
 
 function carregarSistema() {
 

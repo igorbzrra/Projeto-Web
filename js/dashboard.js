@@ -1,8 +1,3 @@
-// ======================================================
-// STUDYHUB 2.0
-// dashboard.js
-// ======================================================
-
 function atualizarDashboard() {
 
     atualizarBoasVindas();
@@ -193,10 +188,6 @@ function atualizarProximasAtividades() {
         });
 
 }
-
-// ======================================
-// BOAS-VINDAS
-// ======================================
 
 function atualizarBoasVindas() {
 

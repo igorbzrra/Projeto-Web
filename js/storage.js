@@ -1,14 +1,5 @@
-// ======================================================
-// STUDYHUB 2.0
-// storage.js
-// Responsável pelo gerenciamento do LocalStorage
-// ======================================================
-
 const STORAGE_KEY = "studyhub";
 
-/**
- * Estrutura padrão do banco de dados.
- */
 const bancoPadrao = {
     disciplinas: [],
     tarefas: [],
@@ -17,10 +8,6 @@ const bancoPadrao = {
     metas: []
 };
 
-/**
- * Carrega o banco do LocalStorage.
- * Caso não exista, cria um banco vazio.
- */
 function carregarBanco() {
 
     const dados = localStorage.getItem(STORAGE_KEY);
@@ -54,9 +41,6 @@ function carregarBanco() {
 
 }
 
-/**
- * Salva o banco completo.
- */
 function salvarBanco(banco) {
 
     localStorage.setItem(
@@ -69,12 +53,6 @@ function salvarBanco(banco) {
 
 }
 
-/**
- * Retorna uma coleção específica.
- *
- * Exemplo:
- * obterColecao("disciplinas")
- */
 function obterColecao(nomeColecao) {
 
     const banco = carregarBanco();
@@ -83,12 +61,6 @@ function obterColecao(nomeColecao) {
 
 }
 
-/**
- * Atualiza uma coleção inteira.
- *
- * Exemplo:
- * atualizarColecao("disciplinas", lista);
- */
 function atualizarColecao(nomeColecao, dados) {
 
     const banco = carregarBanco();
@@ -99,9 +71,6 @@ function atualizarColecao(nomeColecao, dados) {
 
 }
 
-/**
- * Adiciona um registro.
- */
 function adicionarRegistro(nomeColecao, registro) {
 
     const banco = carregarBanco();
@@ -112,9 +81,6 @@ function adicionarRegistro(nomeColecao, registro) {
 
 }
 
-/**
- * Remove um registro pelo ID.
- */
 function removerRegistro(nomeColecao, id) {
 
     const banco = carregarBanco();
@@ -129,9 +95,6 @@ function removerRegistro(nomeColecao, id) {
 
 }
 
-/**
- * Atualiza um registro existente.
- */
 function atualizarRegistro(nomeColecao, id, novosDados) {
 
     const banco = carregarBanco();
@@ -158,9 +121,6 @@ function atualizarRegistro(nomeColecao, id, novosDados) {
 
 }
 
-/**
- * Procura um registro pelo ID.
- */
 function buscarRegistro(nomeColecao, id) {
 
     const banco = carregarBanco();
@@ -173,27 +133,18 @@ function buscarRegistro(nomeColecao, id) {
 
 }
 
-/**
- * Retorna um ID único.
- */
 function gerarId() {
 
     return Date.now() + Math.floor(Math.random() * 1000);
 
 }
 
-/**
- * Limpa todos os dados do StudyHub.
- */
 function limparBanco() {
 
     localStorage.removeItem(STORAGE_KEY);
 
 }
 
-/**
- * Retorna o banco inteiro.
- */
 function obterBanco() {
 
     return carregarBanco();

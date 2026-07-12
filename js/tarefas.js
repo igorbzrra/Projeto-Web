@@ -270,10 +270,6 @@ function criarCardTarefa(tarefa){
 
 }
 
-// =========================================
-// EDITAR
-// =========================================
-
 function editarTarefa(id){
 
     const tarefa = buscarRegistro(
@@ -315,10 +311,6 @@ function editarTarefa(id){
 
 }
 
-// =========================================
-// EXCLUIR
-// =========================================
-
 function excluirTarefa(id){
 
     const confirmar = confirm(
@@ -346,10 +338,6 @@ function excluirTarefa(id){
     atualizarDashboard();
 
 }
-
-// =========================================
-// CONCLUIR
-// =========================================
 
 function concluirTarefa(id){
 
@@ -382,10 +370,6 @@ function concluirTarefa(id){
     atualizarDashboard();
 
 }
-
-// =========================================
-// PESQUISA
-// =========================================
 
 const pesquisaTarefa =
 
@@ -442,10 +426,6 @@ function pesquisarTarefas(){
     .forEach(criarCardTarefa);
 
 }
-
-// =========================================
-// AVISOS
-// =========================================
 
 function obterAvisosTarefas(){
 

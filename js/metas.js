@@ -1,8 +1,3 @@
-// ======================================================
-// STUDYHUB 2.0
-// metas.js
-// ======================================================
-
 let metaEditando = null;
 
 const formMeta =
@@ -293,10 +288,6 @@ function criarCardMeta(meta){
 
 }
 
-// ==========================================
-// EDITAR
-// ==========================================
-
 function editarMeta(id){
 
     const meta = buscarRegistro(
@@ -335,10 +326,6 @@ function editarMeta(id){
 
 }
 
-// ==========================================
-// EXCLUIR
-// ==========================================
-
 function excluirMeta(id){
 
     if(!confirm(
@@ -364,10 +351,6 @@ function excluirMeta(id){
     atualizarDashboard();
 
 }
-
-// ==========================================
-// CONCLUIR
-// ==========================================
 
 function concluirMeta(id){
 
@@ -400,10 +383,6 @@ function concluirMeta(id){
     atualizarDashboard();
 
 }
-
-// ==========================================
-// PESQUISA
-// ==========================================
 
 const pesquisaMeta =
 

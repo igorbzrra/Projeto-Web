@@ -10,10 +10,6 @@
 
 }
 
-/* =======================
-   CARD
-======================= */
-
 .card{
 
     background:white;
@@ -58,10 +54,6 @@
 
 }
 
-/* =======================
-   GRID DASHBOARD
-======================= */
-
 .dashboard-grid{
 
     margin-top:40px;
@@ -91,10 +83,6 @@
     margin-bottom:25px;
 
 }
-
-/* =======================
-   LISTAS DASHBOARD
-======================= */
 
 #avisos p,
 #proximos-compromissos p{

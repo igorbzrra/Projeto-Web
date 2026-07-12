@@ -11,7 +11,6 @@ O objetivo principal é proporcionar uma melhor gestão do tempo e das responsab
 ## 👥 Integrantes
 
 * José Igor de Andrade Bezerra
-* Vitorio Souza Barros
 
 ---
 

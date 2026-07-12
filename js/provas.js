@@ -1,8 +1,3 @@
-// ======================================================
-// STUDYHUB 2.0
-// provas.js
-// ======================================================
-
 let provaEditando = null;
 
 const formProva =
@@ -11,7 +6,6 @@ document.getElementById("form-prova");
 const listaProvas =
 document.getElementById("lista-provas");
 
-// ==========================================
 
 function carregarProvas(){
 
@@ -19,7 +13,6 @@ function carregarProvas(){
 
 }
 
-// ==========================================
 
 formProva.addEventListener(
 
@@ -28,8 +21,6 @@ formProva.addEventListener(
     salvarProva
 
 );
-
-// ==========================================
 
 function salvarProva(event){
 
@@ -345,10 +336,6 @@ function criarCardProva(prova){
 
 }
 
-// ==========================================
-// EDITAR
-// ==========================================
-
 function editarProva(id){
 
     const prova = buscarRegistro(
@@ -396,10 +383,6 @@ function editarProva(id){
 
 }
 
-// ==========================================
-// EXCLUIR
-// ==========================================
-
 function excluirProva(id){
 
     const confirmar = confirm(
@@ -427,10 +410,6 @@ function excluirProva(id){
     atualizarDashboard();
 
 }
-
-// ==========================================
-// PESQUISA
-// ==========================================
 
 const pesquisaProva =
 
@@ -500,10 +479,6 @@ function pesquisarProvas(){
 
 }
 
-// ==========================================
-// AVISOS
-// ==========================================
-
 function obterAvisosProvas(){
 
     const avisos = [];
@@ -565,10 +540,6 @@ function obterAvisosProvas(){
     return avisos;
 
 }
-
-// ==========================================
-// ORDENAÇÃO
-// ==========================================
 
 function ordenarProvas(){
 

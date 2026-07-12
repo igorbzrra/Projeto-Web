@@ -4,17 +4,11 @@ const formDisciplina = document.getElementById("form-disciplina");
 
 const listaDisciplinas = document.getElementById("lista-disciplinas");
 
-// Selects dos outros módulos
-
 const selectTarefa = document.getElementById("disciplina-tarefa");
 
 const selectProva = document.getElementById("disciplina-prova");
 
 const selectAnotacao = document.getElementById("disciplina-anotacao");
-
-// =========================================
-// CARREGAR
-// =========================================
 
 function carregarDisciplinas() {
 
@@ -24,15 +18,7 @@ function carregarDisciplinas() {
 
 }
 
-// =========================================
-// EVENTO DO FORMULÁRIO
-// =========================================
-
 formDisciplina.addEventListener("submit", salvarDisciplina);
-
-// =========================================
-// SALVAR
-// =========================================
 
 function salvarDisciplina(event) {
 
@@ -216,10 +202,6 @@ function renderizarDisciplinas() {
 
 }
 
-// =========================================
-// CRIAÇÃO DOS CARDS
-// =========================================
-
 function criarCardDisciplina(disciplina) {
 
     const card = document.createElement("div");
@@ -290,10 +272,6 @@ function criarCardDisciplina(disciplina) {
 
 }
 
-// =========================================
-// EDITAR
-// =========================================
-
 function editarDisciplina(id) {
 
     const disciplina = buscarRegistro(
@@ -341,10 +319,6 @@ function editarDisciplina(id) {
 
 }
 
-// =========================================
-// EXCLUIR
-// =========================================
-
 function excluirDisciplina(id) {
 
     const confirmar = confirm(
@@ -374,10 +348,6 @@ function excluirDisciplina(id) {
     atualizarDashboard();
 
 }
-
-// =========================================
-// SELECTS
-// =========================================
 
 function atualizarSelects() {
 
@@ -430,10 +400,6 @@ function atualizarSelects() {
     });
 
 }
-
-// =========================================
-// PESQUISA
-// =========================================
 
 const pesquisaDisciplina =
 
