@@ -1,0 +1,187 @@
+.horario-form {
+    margin-bottom: 18px;
+}
+
+.horario-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.export-button {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    color: #334155;
+    cursor: pointer;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.export-button:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.export-image {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.export-image:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.horario-wrapper {
+    background: #eef4ff;
+    border: 1px solid #dbeafe;
+    border-radius: 18px;
+    padding: 26px;
+}
+
+.horario-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.horario-title h2 {
+    color: #1e3a8a;
+    font-size: 24px;
+}
+
+.horario-title > i {
+    color: var(--primary);
+    font-size: 32px;
+}
+
+.eyebrow {
+    color: var(--primary);
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.grade-horario {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(150px, 1fr));
+    gap: 12px;
+    overflow-x: auto;
+}
+
+.dia-horario {
+    min-height: 230px;
+}
+
+.dia-horario h3 {
+    background: var(--primary);
+    border-radius: 10px 10px 0 0;
+    color: white;
+    font-size: 14px;
+    padding: 12px 10px;
+    text-align: center;
+}
+
+.aulas-dia {
+    background: white;
+    border-radius: 0 0 10px 10px;
+    min-height: 190px;
+    padding: 10px;
+}
+
+.aula {
+    align-items: flex-start;
+    background: color-mix(in srgb, var(--aula-cor) 12%, white);
+    border-left: 4px solid var(--aula-cor);
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 10px;
+}
+
+.aula strong,
+.aula span {
+    display: block;
+    font-size: 12px;
+}
+
+.aula strong {
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.aula span,
+.sem-aula {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.remover-aula {
+    background: transparent;
+    border: 0;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.remover-aula:hover {
+    color: var(--red);
+}
+
+.sem-aula {
+    padding: 14px 4px;
+    text-align: center;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #horario-exportavel,
+    #horario-exportavel * {
+        visibility: visible;
+    }
+
+    #horario-exportavel {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .horario-wrapper {
+        background: white;
+        border: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .grade-horario {
+        grid-template-columns: repeat(6, 180px);
+    }
+}
+
+@media (max-width: 600px) {
+    .horario-actions {
+        justify-content: stretch;
+    }
+
+    .export-button {
+        flex: 1;
+        padding: 11px 8px;
+    }
+
+    .horario-wrapper {
+        padding: 16px;
+    }
+}

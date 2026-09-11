@@ -58,6 +58,11 @@
         Metas
       </button>
 
+      <button class="nav-item" data-page="horario">
+        <i class="fa-solid fa-calendar-week"></i>
+        Horário Acadêmico
+      </button>
+
     </nav>
 
   </aside>
@@ -154,7 +159,7 @@
 
         <input type="text" id="sala" placeholder="Sala">
 
-        <input type="text" id="horario" placeholder="Horário">
+        <input type="text" id="horario-disciplina" placeholder="Horário">
 
         <label for="cor-disciplina">
           Cor da disciplina
@@ -393,6 +398,79 @@
 
     </section>
 
+    <section id="horario" class="page">
+
+      <header class="page-header">
+
+        <h1>Horário Acadêmico</h1>
+
+        <p>Organize suas aulas e leve seu horário com você.</p>
+
+      </header>
+
+      <form id="form-horario" class="form horario-form">
+
+        <select id="dia-horario" required>
+          <option value="">Selecione o dia</option>
+          <option value="segunda">Segunda-feira</option>
+          <option value="terca">Terça-feira</option>
+          <option value="quarta">Quarta-feira</option>
+          <option value="quinta">Quinta-feira</option>
+          <option value="sexta">Sexta-feira</option>
+          <option value="sabado">Sábado</option>
+        </select>
+
+        <select id="disciplina-horario" required>
+          <option value="">Selecione uma disciplina</option>
+        </select>
+
+        <input type="time" id="inicio-horario" required>
+        <input type="time" id="fim-horario" required>
+        <input type="text" id="sala-horario" placeholder="Sala (opcional)">
+
+        <button type="submit">
+          <i class="fa-solid fa-plus"></i>
+          Adicionar aula
+        </button>
+
+      </form>
+
+      <div class="horario-actions">
+        <button type="button" class="export-button" id="exportar-pdf">
+          <i class="fa-solid fa-file-pdf"></i>
+          Exportar PDF
+        </button>
+        <button type="button" class="export-button export-image" id="exportar-jpeg">
+          <i class="fa-solid fa-image"></i>
+          Exportar JPEG
+        </button>
+      </div>
+
+      <div class="horario-wrapper" id="horario-exportavel">
+        <div class="horario-title">
+          <div>
+            <span class="eyebrow">StudyHub</span>
+            <h2>Meu horário semanal</h2>
+          </div>
+          <i class="fa-solid fa-calendar-week"></i>
+        </div>
+        <div id="grade-horario" class="grade-horario"></div>
+      </div>
+
+      <div class="empty-state horario-empty" id="horario-vazio">
+
+        <i class="fa-solid fa-calendar-week"></i>
+
+        <h2>Nenhuma aula cadastrada</h2>
+
+        <p>
+          Adicione uma aula acima para montar sua grade semanal.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -420,6 +498,7 @@
   <script src="js/anotacoes.js"></script>
   <script src="js/metas.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/horario.js"></script>
 
 </body>
 

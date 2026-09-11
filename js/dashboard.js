@@ -24,8 +24,11 @@ function atualizarTotais() {
     document.getElementById("total-anotacoes").textContent =
         obterColecao("anotacoes").length;
 
-    document.getElementById("total-metas").textContent =
-        obterColecao("metas").length;
+    const totalMetas = document.getElementById("total-metas");
+
+    if (totalMetas) {
+        totalMetas.textContent = obterColecao("metas").length;
+    }
 
 }
 
@@ -35,7 +38,7 @@ function atualizarAvisos() {
 
         document.getElementById(
 
-            "lista-avisos"
+            "avisos"
 
         );
 
@@ -87,7 +90,7 @@ function atualizarProximasAtividades() {
 
         document.getElementById(
 
-            "proximas-atividades"
+            "proximos-compromissos"
 
         );
 

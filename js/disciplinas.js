@@ -66,7 +66,7 @@ function salvarDisciplina(event) {
         horario:
 
             document
-                .getElementById("horario")
+                .getElementById("horario-disciplina")
                 .value
                 .trim(),
 
@@ -305,7 +305,7 @@ function editarDisciplina(id) {
     document.getElementById("sala").value =
         disciplina.sala;
 
-    document.getElementById("horario").value =
+    document.getElementById("horario-disciplina").value =  
         disciplina.horario;
 
     document.getElementById("cor-disciplina").value =

@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     carregarMetas();
 
+    carregarHorario();
+
     atualizarDashboard();
 
 });
@@ -85,6 +87,12 @@ function carregarSistema() {
     if (typeof carregarMetas === "function") {
 
         carregarMetas();
+
+    }
+
+    if (typeof carregarHorario === "function") {
+
+        carregarHorario();
 
     }
 

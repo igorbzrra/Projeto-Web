@@ -5,7 +5,8 @@ const bancoPadrao = {
     tarefas: [],
     provas: [],
     anotacoes: [],
-    metas: []
+    metas: [],
+    horarios: []
 };
 
 function carregarBanco() {
