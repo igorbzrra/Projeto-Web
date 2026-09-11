@@ -1,0 +1,88 @@
+.backup-panel {
+    align-items: center;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 16px;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding: 22px 24px;
+}
+
+.backup-panel > div:first-child {
+    align-items: center;
+    display: flex;
+    gap: 14px;
+}
+
+.backup-icon {
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    color: var(--primary);
+    display: flex;
+    flex: 0 0 44px;
+    font-size: 20px;
+    height: 44px;
+    justify-content: center;
+}
+
+.backup-panel h3 {
+    color: #1e3a8a;
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.backup-panel p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.backup-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 10px;
+}
+
+.backup-button {
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 14px;
+}
+
+.backup-button:hover {
+    background: var(--primary-dark);
+}
+
+.backup-button-outline {
+    background: white;
+    color: var(--primary);
+}
+
+.backup-button-outline:hover {
+    background: #dbeafe;
+    color: var(--primary-dark);
+}
+
+.backup-status {
+    color: #166534 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 850px) {
+    .backup-panel {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .backup-actions {
+        flex-wrap: wrap;
+    }
+}

@@ -137,6 +137,30 @@
 
       </div>
 
+      <section class="backup-panel" aria-labelledby="titulo-backup">
+        <div>
+          <span class="backup-icon"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+          <div>
+            <h3 id="titulo-backup">Backup e transferência</h3>
+            <p>Leve seus dados para outro celular ou computador usando um arquivo de backup.</p>
+          </div>
+        </div>
+
+        <div class="backup-actions">
+          <button type="button" class="backup-button" id="exportar-backup">
+            <i class="fa-solid fa-download"></i>
+            Exportar dados
+          </button>
+          <button type="button" class="backup-button backup-button-outline" id="importar-backup">
+            <i class="fa-solid fa-upload"></i>
+            Importar dados
+          </button>
+          <input type="file" id="arquivo-backup" accept="application/json,.json" hidden>
+        </div>
+
+        <p class="backup-status" id="status-backup" role="status"></p>
+      </section>
+
     </section>
 
     <section id="disciplinas" class="page">

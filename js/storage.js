@@ -151,3 +151,68 @@ function obterBanco() {
     return carregarBanco();
 
 }
+
+function exportarDados() {
+
+    const arquivo = {
+        aplicativo: "StudyHub",
+        versao: 1,
+        exportadoEm: new Date().toISOString(),
+        dados: obterBanco()
+    };
+
+    const blob = new Blob(
+        [JSON.stringify(arquivo, null, 2)],
+        { type: "application/json" }
+    );
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = `studyhub-backup-${hoje()}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+
+}
+
+function importarDados(arquivo) {
+
+    return arquivo.text().then(conteudo => {
+
+        const backup = JSON.parse(conteudo);
+        const dadosImportados = backup.dados || backup;
+
+        if (!dadosImportados || typeof dadosImportados !== "object") {
+            throw new Error("Formato de backup inválido.");
+        }
+
+        const bancoAtual = obterBanco();
+        const bancoMesclado = structuredClone(bancoPadrao);
+
+        Object.keys(bancoPadrao).forEach(nomeColecao => {
+
+            const registrosAtuais = bancoAtual[nomeColecao] || [];
+            const registrosImportados = Array.isArray(dadosImportados[nomeColecao])
+                ? dadosImportados[nomeColecao]
+                : [];
+            const registrosPorId = new Map(
+                registrosAtuais.map(registro => [String(registro.id), registro])
+            );
+
+            registrosImportados.forEach(registro => {
+                if (registro && registro.id !== undefined) {
+                    registrosPorId.set(String(registro.id), registro);
+                }
+            });
+
+            bancoMesclado[nomeColecao] = [...registrosPorId.values()];
+
+        });
+
+        salvarBanco(bancoMesclado);
+        return bancoMesclado;
+
+    });
+
+}

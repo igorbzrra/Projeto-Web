@@ -45,6 +45,17 @@ O objetivo principal é proporcionar uma melhor gestão do tempo e das responsab
 * Próximas avaliações.
 * Progresso das metas de estudo.
 
+### ☁️ Backup entre dispositivos
+
+Os dados são salvos no navegador atual. Para usar o StudyHub em outro computador ou celular:
+
+1. No Dashboard, clique em **Exportar dados**.
+2. Salve o arquivo `studyhub-backup.json` em um local seguro, como Google Drive ou OneDrive.
+3. Abra o projeto no outro dispositivo e clique em **Importar dados**.
+4. Selecione o arquivo exportado.
+
+A importação mescla os dados do arquivo com os dados que já existem no dispositivo. A sincronização automática em tempo real ainda exige um banco de dados online e autenticação.
+
 ---
 
 ## 💡 Motivação

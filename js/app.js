@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     atualizarDashboard();
 
+    iniciarBackup();
+
 });
 
 function iniciarMenu() {
@@ -101,5 +103,46 @@ function carregarSistema() {
         atualizarDashboard();
 
     }
+
+}
+
+function iniciarBackup() {
+
+    const botaoExportar = document.getElementById("exportar-backup");
+    const botaoImportar = document.getElementById("importar-backup");
+    const arquivoBackup = document.getElementById("arquivo-backup");
+    const status = document.getElementById("status-backup");
+
+    botaoExportar.addEventListener("click", () => {
+        exportarDados();
+        status.textContent = "Backup exportado. Guarde o arquivo em um local seguro.";
+    });
+
+    botaoImportar.addEventListener("click", () => arquivoBackup.click());
+
+    arquivoBackup.addEventListener("change", async () => {
+
+        const arquivo = arquivoBackup.files[0];
+        if (!arquivo) return;
+
+        try {
+            await importarDados(arquivo);
+            status.textContent = "Backup importado. Os dados atuais e importados foram preservados.";
+            carregarSistema();
+            carregarDisciplinas();
+            carregarTarefas();
+            carregarProvas();
+            carregarAnotacoes();
+            carregarMetas();
+            carregarHorario();
+            atualizarDashboard();
+        } catch (erro) {
+            status.textContent = "Não foi possível importar esse arquivo de backup.";
+            console.error("Erro ao importar backup:", erro);
+        }
+
+        arquivoBackup.value = "";
+
+    });
 
 }
