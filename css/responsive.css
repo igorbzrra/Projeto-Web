@@ -88,6 +88,12 @@ font-size:34px;
 
 @media(max-width:600px){
 
+body{
+
+flex-direction:column;
+
+}
+
 .sidebar{
 
 position:fixed;
@@ -120,9 +126,17 @@ margin:0;
 
 flex-direction:row;
 
-justify-content:space-around;
+	justify-content:flex-start;
 
-width:100%;
+	width:100%;
+
+	overflow-x:auto;
+
+	overflow-y:hidden;
+
+	scrollbar-width:thin;
+
+	-webkit-overflow-scrolling:touch;
 
 }
 
@@ -135,6 +149,12 @@ font-size:11px;
 gap:4px;
 
 padding:8px;
+
+	flex:0 0 88px;
+
+	white-space:nowrap;
+
+	text-align:center;
 
 }
 
@@ -150,7 +170,17 @@ margin-left:0;
 
 margin-bottom:85px;
 
+width:100%;
+
+min-width:0;
+
 padding:20px;
+
+}
+
+.footer{
+
+width:100%;
 
 }
 
